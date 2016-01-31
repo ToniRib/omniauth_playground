@@ -25,4 +25,16 @@ class Workout < ActiveRecord::Base
   def route_coordinates
     workout_details.map { |point| point.coordinates }
   end
+
+  def speeds
+    workout_details.pluck(:speed)
+  end
+
+  def max_speed
+    workout_details.maximum(:speed)
+  end
+
+  def min_speed
+    workout_details.minimum(:speed)
+  end
 end
