@@ -8,3 +8,37 @@
   <li>Average Speed: <%= @workout.average_speed %> meters/second</li>
   <li>Distance: <%= @workout.total_distance %> meters</li>
 </ul>
+
+<div class="row">
+  <div id="google-map" class="main-map"></div>
+</div>
+
+<%= javascript_tag do %>
+  function initMap() {
+    var startLatLng = {lat: <%= @workout.workout_details.first.latitude %>,
+                       lng: <%= @workout.workout_details.first.longitude %>};
+
+    var endLatLng = {lat: <%= @workout.workout_details.last.latitude %>,
+                     lng: <%= @workout.workout_details.last.longitude %>};
+
+    var map = new google.maps.Map(document.getElementById('google-map'), {
+      center: startLatLng,
+      zoom: 14
+    });
+
+    var startMarker = new google.maps.Marker({
+      position: startLatLng,
+      map: map,
+      label: "S"
+    });
+
+    var endMarker = new google.maps.Marker({
+      position: endLatLng,
+      map: map,
+      label: "E"
+    });
+  }
+<% end %>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm1nN_vOXj6XM6U8rRNaBDAcprgDB1pkM&callback=initMap"
+async defer></script>
