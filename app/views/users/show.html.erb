@@ -1,0 +1,12 @@
+<h1>Welcome, <%= @user.full_name %></h1>
+
+<h3>User Info:</h3>
+<ul>
+  <li>Map My Fitness Id: <%= @user.map_my_fitness_id %></li>
+  <li>Birthdate: <%= @user.birthdate %></li>
+  <li>Email: <%= @user.email %></li>
+  <li>City: <%= @user.city %></li>
+  <li>State: <%= @user.state %></li>
+</ul>
+
+<%= link_to "Get Workouts", workouts_path, method: :post %>

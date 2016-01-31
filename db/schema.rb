@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160131174112) do
+ActiveRecord::Schema.define(version: 20160131184043) do
 
   create_table "users", force: :cascade do |t|
     t.integer  "map_my_fitness_id"
@@ -29,5 +29,23 @@ ActiveRecord::Schema.define(version: 20160131174112) do
 
   add_index "users", ["map_my_fitness_id"], name: "index_users_on_map_my_fitness_id"
   add_index "users", ["username"], name: "index_users_on_username"
+
+  create_table "workouts", force: :cascade do |t|
+    t.integer  "map_my_fitness_id"
+    t.string   "name"
+    t.datetime "updated_datetime"
+    t.datetime "created_datetime"
+    t.string   "time_zone"
+    t.float    "total_active_time"
+    t.float    "total_distance"
+    t.float    "average_speed"
+    t.float    "total_elapsed_time"
+    t.integer  "user_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "workouts", ["map_my_fitness_id"], name: "index_workouts_on_map_my_fitness_id"
+  add_index "workouts", ["user_id"], name: "index_workouts_on_user_id"
 
 end

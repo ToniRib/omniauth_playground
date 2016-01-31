@@ -4,8 +4,9 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_or_create_from_auth_hash(auth_hash)
-    self.current_user = @user
-    redirect_to '/'
+    session[:user_id] = @user.id
+    session[:auth_token] = auth_hash.credentials.token
+    redirect_to dashboard_path
   end
 
   protected

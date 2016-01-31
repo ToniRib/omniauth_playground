@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
+  has_many :workouts
+
   def self.find_or_create_from_auth_hash(auth_hash)
     user = User.find_by(map_my_fitness_id: auth_hash.info.id)
+
     unless user
       user = User.create({
         map_my_fitness_id: auth_hash.info.id,
@@ -14,10 +17,11 @@ class User < ActiveRecord::Base
         time_zone: auth_hash.info.time_zone
       })
     end
+
     user
   end
 
-  def user_info(auth_hash)
-
+  def full_name
+    "#{first_name} #{last_name}"
   end
 end

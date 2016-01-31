@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  map_my_fitness_id: 1
+  name: MyString
+  updated_datetime: 2016-01-31 11:41:06
+  created_datetime: 2016-01-31 11:41:06
+  time_zone: MyString
+  total_active_time: 1.5
+  total_distance: 1.5
+  average_speed: 1.5
+  total_elapsed_time: 1.5
+  user_id: 
+
+two:
+  map_my_fitness_id: 1
+  name: MyString
+  updated_datetime: 2016-01-31 11:41:06
+  created_datetime: 2016-01-31 11:41:06
+  time_zone: MyString
+  total_active_time: 1.5
+  total_distance: 1.5
+  average_speed: 1.5
+  total_elapsed_time: 1.5
+  user_id: 
