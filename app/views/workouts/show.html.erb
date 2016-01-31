@@ -37,6 +37,18 @@
       map: map,
       label: "E"
     });
+
+    var routeCoordinates = <%= @workout.route_coordinates.to_json.html_safe %>;
+
+    var routePath = new google.maps.Polyline({
+      path: routeCoordinates,
+      geodesic: true,
+      strokeColor: '#ff5400',
+      strokeOpacity: 1.0,
+      strokeWeight: 2
+    });
+
+    routePath.setMap(map);
   }
 <% end %>
 

@@ -21,4 +21,8 @@ class Workout < ActiveRecord::Base
   def self.average_speed_for_distance_range(start_distance, end_distance)
     Workout.where("total_distance >= ? AND total_distance <= ?", start_distance, end_distance)
   end
+
+  def route_coordinates
+    workout_details.map { |point| point.coordinates }
+  end
 end
