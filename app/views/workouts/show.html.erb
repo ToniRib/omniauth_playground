@@ -1,0 +1,10 @@
+<h1><%= @workout.name %> (<%= @workout.map_my_fitness_id %>)</h1>
+<h3><%= @workout.created_datetime %></h3>
+
+<h4>Totals:</h4>
+<ul>
+  <li>Active Time: <%= @workout.active_time_in_minutes %> minutes</li>
+  <li>Elapsed Time: <%= @workout.elapsed_time_in_minutes %> minutes</li>
+  <li>Average Speed: <%= @workout.average_speed %> meters/second</li>
+  <li>Distance: <%= @workout.total_distance %> meters</li>
+</ul>
