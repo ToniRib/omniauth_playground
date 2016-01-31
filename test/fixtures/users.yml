@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  map_my_fitness_id: 1
+  birthdate: 2016-01-31 10:41:12
+  email: MyString
+  first_name: MyString
+  last_name: MyString
+  city: MyString
+  state: MyString
+  username: MyString
+  time_zone: MyString
+
+two:
+  map_my_fitness_id: 1
+  birthdate: 2016-01-31 10:41:12
+  email: MyString
+  first_name: MyString
+  last_name: MyString
+  city: MyString
+  state: MyString
+  username: MyString
+  time_zone: MyString
